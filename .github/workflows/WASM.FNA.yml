@@ -82,7 +82,7 @@ jobs:
         uses: actions/upload-artifact@master
         with:
           name: WASM Libraries for ${{ matrix.variant }} on ${{ matrix.os }}
-          path: FNA-WASM.Binaries.zip
+          path: Binaries
       - name: Make a release
         uses: ncipollo/release-action@v1
         with:
