@@ -1,0 +1,26 @@
+diff --git a/src/misc/emscripten/SDL_sysurl.c b/src/misc/emscripten/SDL_sysurl.c
+index 87c1a0ca3..85a9a0161 100644
+--- a/src/misc/emscripten/SDL_sysurl.c
++++ b/src/misc/emscripten/SDL_sysurl.c
+@@ -23,8 +23,6 @@
+ 
+ #include <emscripten/emscripten.h>
+ 
+-EM_JS_DEPS(sdlsysurl, "$UTF8ToString");
+-
+ int SDL_SYS_OpenURL(const char *url)
+ {
+     EM_ASM(window.open(UTF8ToString($0), "_blank"), url);
+diff --git a/src/video/emscripten/SDL_emscriptenmouse.c b/src/video/emscripten/SDL_emscriptenmouse.c
+index d189e5393..0ba9c2695 100644
+--- a/src/video/emscripten/SDL_emscriptenmouse.c
++++ b/src/video/emscripten/SDL_emscriptenmouse.c
+@@ -69,8 +69,6 @@ static SDL_Cursor *Emscripten_CreateDefaultCursor()
+     return Emscripten_CreateCursorFromString("default", SDL_FALSE);
+ }
+ 
+-EM_JS_DEPS(sdlmouse, "$stringToUTF8,$UTF8ToString");
+-
+ static SDL_Cursor *Emscripten_CreateCursor(SDL_Surface *surface, int hot_x, int hot_y)
+ {
+     const char *cursor_url = NULL;
